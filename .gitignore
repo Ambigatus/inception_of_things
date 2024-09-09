@@ -1,0 +1,4 @@
+.vagrant
+.vs
+ubuntu-*
+.DS_Store
