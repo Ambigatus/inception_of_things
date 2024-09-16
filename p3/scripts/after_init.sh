@@ -1,13 +1,14 @@
 #!/bin/bash
 
+# Set the colors for displaying information in the terminal
 GREEN="\033[32m"
 RED="\033[31m"
-RESET="\033[0m"
+END="\033[0m"
 
 
 
 # password to argocd (user: admin)
-echo -n "${GREEN}ARGOCD PASSWORD : "
+echo -n "ARGOCD PASSWORD : "
   sudo kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 --decode
 echo "${RESET}"
 

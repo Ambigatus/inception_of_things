@@ -7,6 +7,9 @@ RESET="\033[0m"
 # install git
 sudo apt install git
 
+# init cluster
+sudo k3d cluster start mycluster
+
 # init wil-app
 sudo kubectl apply -f ../confs/argo-app.yaml
 

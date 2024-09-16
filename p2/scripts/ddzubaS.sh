@@ -20,3 +20,12 @@ else
     echo -e "${RED}K3s verification FAILED${END}"
     exit 1
 fi
+
+# Create and configure a dummy network interface
+# The commands add eth1 as a dummy interface and assign an IP address to it
+
+if sudo ip link add eth1 type dummy && sudo ip addr add 192.168.56.110/24 dev eth1 && sudo ip link set eth1 up; then
+    echo -e "${GREEN}add eth1 SUCCEEDED${END}"
+else
+    echo -e "${RED}add eth1 FAILED${END}"
+fi
